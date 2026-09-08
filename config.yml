@@ -1,0 +1,7 @@
+tunnel: ee1a48eb-7c9d-457f-aea0-5061a739ecb6
+credentials-file: /home/ubuntu/.cloudflared/ee1a48eb-7c9d-457f-aea0-5061a739ecb6.json
+
+ingress:
+  - hostname: ob.lovedodo.online
+    service: http://127.0.0.1:8081
+  - service: http_status:404
