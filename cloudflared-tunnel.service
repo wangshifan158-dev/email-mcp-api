@@ -1,0 +1,15 @@
+[Unit]
+Description=Cloudflare Tunnel for OB MCP
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+ExecStart=/usr/local/bin/cloudflared tunnel run ob-tunnel
+Restart=always
+RestartSec=5
+Environment=TUNNEL_ORIGIN_CERT=/home/ubuntu/.cloudflared/cert.pem
+
+[Install]
+WantedBy=multi-user.target
